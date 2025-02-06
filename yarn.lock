@@ -13482,6 +13482,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"storybook-start-bug@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "storybook-start-bug@workspace:."
+  dependencies:
+    "@chromatic-com/storybook": "npm:3.2.4"
+    "@storybook/addon-essentials": "npm:8.5.3"
+    "@storybook/addon-interactions": "npm:8.5.3"
+    "@storybook/addon-onboarding": "npm:8.5.3"
+    "@storybook/blocks": "npm:8.5.3"
+    "@storybook/preset-create-react-app": "npm:8.5.3"
+    "@storybook/react": "npm:8.5.3"
+    "@storybook/react-webpack5": "npm:8.5.3"
+    "@storybook/test": "npm:8.5.3"
+    "@testing-library/jest-dom": "npm:^5.14.1"
+    "@testing-library/react": "npm:^13.0.0"
+    "@testing-library/user-event": "npm:^13.2.1"
+    eslint-plugin-storybook: "npm:^0.11.2"
+    prop-types: "npm:15.8.1"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    react-scripts: "npm:5.0.1"
+    storybook: "npm:8.5.3"
+    web-vitals: "npm:^2.1.0"
+    webpack: "npm:5.97.1"
+  languageName: unknown
+  linkType: soft
+
 "storybook@npm:8.5.3":
   version: 8.5.3
   resolution: "storybook@npm:8.5.3"
@@ -15355,33 +15382,6 @@ __metadata:
   checksum: 10c0/b1dbfefa679848442454b60053a6c95d62f2d2e21dd28def92b647587f415969173c6e99a0f3bab4f1b67ee8283bf735ebe3544013f09491186ba9e8a9a2b651
   languageName: node
   linkType: hard
-
-"yarn-bug-test@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "yarn-bug-test@workspace:."
-  dependencies:
-    "@chromatic-com/storybook": "npm:3.2.4"
-    "@storybook/addon-essentials": "npm:8.5.3"
-    "@storybook/addon-interactions": "npm:8.5.3"
-    "@storybook/addon-onboarding": "npm:8.5.3"
-    "@storybook/blocks": "npm:8.5.3"
-    "@storybook/preset-create-react-app": "npm:8.5.3"
-    "@storybook/react": "npm:8.5.3"
-    "@storybook/react-webpack5": "npm:8.5.3"
-    "@storybook/test": "npm:8.5.3"
-    "@testing-library/jest-dom": "npm:^5.14.1"
-    "@testing-library/react": "npm:^13.0.0"
-    "@testing-library/user-event": "npm:^13.2.1"
-    eslint-plugin-storybook: "npm:^0.11.2"
-    prop-types: "npm:15.8.1"
-    react: "npm:^19.0.0"
-    react-dom: "npm:^19.0.0"
-    react-scripts: "npm:5.0.1"
-    storybook: "npm:8.5.3"
-    web-vitals: "npm:^2.1.0"
-    webpack: "npm:5.97.1"
-  languageName: unknown
-  linkType: soft
 
 "yocto-queue@npm:^0.1.0":
   version: 0.1.0
