@@ -17,5 +17,6 @@ ARG USER_GID=$USER_UID
 RUN usermod -u $USER_UID $USERNAME \
     && groupmod -g $USER_GID $USERNAME
 
+RUN corepack enable
 # Set `DEVCONTAINER` environment variable to help with orientation
 ENV DEVCONTAINER=true
