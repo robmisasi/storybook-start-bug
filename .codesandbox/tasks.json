@@ -2,7 +2,7 @@
   "tasks": {
     "StorybookStart": {
       "name": "StorybookStart",
-      "command": "yarn storybook",
+      "command": "yarn storybook --ci",
       "runAtStart": true,
       "preview": {
         "port": 6006
