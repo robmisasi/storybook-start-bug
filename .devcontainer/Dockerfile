@@ -18,5 +18,7 @@ RUN usermod -u $USER_UID $USERNAME \
     && groupmod -g $USER_GID $USERNAME
 
 RUN corepack enable && corepack install --global yarn@4.6.0
+ENV COREPACK_ENABLE_NETWORK=0
+ENV COREPACK_ENABLE_PROJECT_SPEC=0
 # Set `DEVCONTAINER` environment variable to help with orientation
 ENV DEVCONTAINER=true
