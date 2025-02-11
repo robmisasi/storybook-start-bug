@@ -9,7 +9,9 @@ ARG USER_UID=2000
 ARG USER_GID=$USER_UID
 
 RUN useradd -m -s /usr/bin/bash -u $USER_UID $USERNAME \
-    && groupmod -g $USER_GID $USERNAME
+    && groupmod -g $USER_GID $USERNAME \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
 
 # Install NodeJS
 ENV NODE_MAJOR="22"
