@@ -3,7 +3,13 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "forwardPorts": [
+    3000,
+    6006
+  ],
   "remoteUser": "node",
   "workspaceFolder": "/workspace",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "updateRemoteUserUID": false,
+  "postCreateCommand": "sudo chown -R node node_modules"
 }

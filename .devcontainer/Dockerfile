@@ -1,24 +1,34 @@
-FROM node:22
+FROM ubuntu:noble
 
 # Install basic development tools
-RUN apt update && apt install -y less man-db sudo
+RUN apt update && apt install -y bash git less man-db sudo && apt clean
 
-# Set up a non-root user (assuming `node` is the default user in the base image)
+# Add user "node"
 ARG USERNAME=node
-ARG USER_UID=1000
+ARG USER_UID=2000
 ARG USER_GID=$USER_UID
 
-# For password-less `sudo` access, uncomment the following lines
-# RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-#     && chmod 0440 /etc/sudoers.d/$USERNAME
-
-# Set UID/GID to match host user to avoid permission issues
-# Used usermod instead of useradd because assuming the user already exists
-RUN usermod -u $USER_UID $USERNAME \
+RUN useradd -m -s /usr/bin/bash -u $USER_UID $USERNAME \
     && groupmod -g $USER_GID $USERNAME
 
-RUN corepack enable && corepack install --global yarn@4.6.0
+# Install NodeJS
+ENV NODE_MAJOR="22"
+
+RUN apt-get update \
+    && apt-get install -y ca-certificates curl gnupg \
+    && mkdir -p /etc/apt/keyrings \
+    && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list \
+    && apt-get update \
+    && apt-get install -y nodejs \
+    && apt-get clean
+
+# Install yarn
+RUN corepack enable \
+    && su - $USERNAME -c "corepack install -g yarn"
+
 ENV COREPACK_ENABLE_NETWORK=0
 ENV COREPACK_ENABLE_PROJECT_SPEC=0
-# Set `DEVCONTAINER` environment variable to help with orientation
 ENV DEVCONTAINER=true
+
+CMD ["/usr/bin/bash", "-l"]

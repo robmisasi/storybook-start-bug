@@ -2,7 +2,7 @@
   "tasks": {
     "StorybookStart": {
       "name": "StorybookStart",
-      "command": "yarn storybook --ci",
+      "command": "yarn sb --ci",
       "runAtStart": true,
       "preview": {
         "port": 6006
@@ -10,7 +10,7 @@
     },
     "StorybookBuild": {
       "name": "StorybookBuild",
-      "command": "yarn build-storybook"
+      "command": "yarn build:sb"
     }
   }
 }
